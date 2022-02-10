@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-import java.util.Arrays;
+
 
 public class ArrayListAlgorithms
 {
@@ -62,16 +62,13 @@ public class ArrayListAlgorithms
          *
          *  @param wordList  original arraylist of words
          */
-//        public static void replaceWithCaps(ArrayList<String> wordList)
-//        {
-//            for (String word : wordList)
-//            {
-//                if (word.indexOf("s").equals(word.length() - 1))
-//                {
-//                    word.toUpperCase();
-//                }
-//            }
-//        }
+        public static void replaceWithCaps(ArrayList<String> wordList)
+        {
+            for (int i = 0; i < wordList.size(); i++)
+            {
+
+            }
+        }
 
         /** Returns the index at which the minimum value of all integers in
          *  intList appears; if the minimum value appears more than once in

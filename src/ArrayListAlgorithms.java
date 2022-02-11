@@ -3,84 +3,55 @@ import java.util.ArrayList;
 
 public class ArrayListAlgorithms
 {
-    /** Returns true if any of the elements in stringList contain
-     *  target as a substring; false otherwise.  Use indexOf instead of contains
-     *  for AP practice! (although in reality, contains is preferred)
+
+    /** Returns arraylist of Integers that contain all mode(s) of the int array numList.
+     *  If elements in numList all appear exactly once, there is no mode, and this method
+     *  should return an empty list
      *
-     *  Does NOT mutate (modify) elements of stringList.
-     *  PRECONDITION: stringList.size() > 0
+     *  For example, if numList is: [1, 2, 3, 2, 4, 5, 5, 6],
+     *  then numList contains two modes: 2, 5
+     *  and this method returns an arraylist containing 2 and 5 (in any order)
+     *  If numList is: [1, 2, 3, 2, 4, 5, 5, 6, 6, 7, 6],
+     *  then numList contains one mode: 6
+     *  and this method returns an arrayList containing 6
+     *  If numList is: [1, 2, 3, 4, 5, 6], then numList contains no mode
+     *  and this method returns an empty arrayList: []
+     *  If numList is: [2, 2, 2, 3, 3, 3, 4, 4, 4],
+     *  then numList contains three modes: 2, 3, 4
+     *  and this method returns an arrayList containing 2, 3, and 4 (in any order)
      *
-     *  @param stringList  original arraylist of Strings
-     *  @return  true if target is found in any of the strings, false otherwise
+     *  Does NOT mutate (modify) elements in numList
+     *  PRECONDITIONS: numList.length > 0
+     *
+     *  @param numList  numList of ints
      */
-    public static boolean containsTarget(ArrayList<String> stringList, String target)
+    public static ArrayList<Integer> modes(int[] numList)
     {
-        for (int i = 0; i < stringList.size(); i++)
+        ArrayList<Integer> modes = new ArrayList<Integer>();
+        int max = 1;
+        for (int i = 0; i < numList.length; i++)
         {
-            if (stringList.get(i).indexOf(target) != -1)
+            int count = 1;
+            for (int x = i + 1; x < numList.length; x++)
             {
-                return true;
+                if (numList[i] == numList[x])
+                {
+                    count++;
+                }
+            }
+            if (count > max)
+            {
+                max = count;
+                modes.clear();
+                modes.add(numList[i]);
+            }
+            else if (count == max && count != 1)
+            {
+                modes.add(numList[i]);
             }
         }
-        return false;
+        return modes;
     }
 
-    /** Returns number of elements in intList that are less than the
-     *  average of all elements.
-     *
-     *  Does NOT mutate (modify) elements of intList.
-     *  PRECONDITION: intList.size() > 0
-     *
-     *  @param intList  original arraylist of Integers
-     *  @return  the number of ints in intList that are less than the average
-     */
-    public static int belowAverage(ArrayList<Integer> intList)
-    {
-        int sum = 0;
-        int count = 0;
-        for (int i = 0; i < intList.size(); i++)
-        {
-            sum += intList.get(i);
-        }
-        double average = (double) sum / intList.size();
-        for (Integer num : intList)
-        {
-            if (num < average)
-            {
-                count++;
-            }
-        }
-        return count;
 
-        /** Replaces all words in wordList that end in "s" with the all-uppercase
-         *  version of the word.  For example, "apples" should be replaced with "APPLES".
-         *  Assume all letters of all words in wordList are lowercase initially (no need
-         *  to worry about checking for case or converting first to lowercase)
-         *
-         *  DOES mutate (modify) elements of wordList.
-         *  PRECONDITION: wordList.size() > 0
-         *
-         *  @param wordList  original arraylist of words
-         */
-        public static void replaceWithCaps(ArrayList<String> wordList)
-        {
-            for (int i = 0; i < wordList.size(); i++)
-            {
-
-            }
-        }
-
-        /** Returns the index at which the minimum value of all integers in
-         *  intList appears; if the minimum value appears more than once in
-         *  the arraylist, return the index of the first occurrence
-         *
-         *  Does NOT mutate (modify) elements in intList.
-         *  PRECONDITION: intList.size() > 0
-         *
-         *  @param intList  original arraylist of Integers
-         *  @return  the index at which the minimum value occurs
-         */
-        public static int indexOfMinimum(ArrayList<Integer> intList)
-        { /* implement this method! */ }
-    }
 }

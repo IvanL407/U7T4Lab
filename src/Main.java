@@ -3,37 +3,28 @@ import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-        ArrayList<String> stringList = new ArrayList<String>(Arrays.asList("this", "list", "contains", "several", "words"));
-        boolean contains = ArrayListAlgorithms.containsTarget(stringList, "is");
-        System.out.println(contains);
-        contains = ArrayListAlgorithms.containsTarget(stringList, "v");
-        System.out.println(contains);
-        contains = ArrayListAlgorithms.containsTarget(stringList, "words");
-        System.out.println(contains);
-        contains = ArrayListAlgorithms.containsTarget(stringList, "ia");
-        System.out.println(contains);
 
-        ArrayList<Integer> intList = new ArrayList<Integer>(Arrays.asList(1, 2, 3, 4, 5));
-        int count = ArrayListAlgorithms.belowAverage(intList);
-        System.out.println(count);
-        ArrayList<Integer> intList2 = new ArrayList<Integer>(Arrays.asList(6, 3, 8, 5, 6, 3));
-        count = ArrayListAlgorithms.belowAverage(intList2);
-        System.out.println(count);
-        ArrayList<Integer> intList3 = new ArrayList<Integer>(Arrays.asList(10, 12, 9));
-        count = ArrayListAlgorithms.belowAverage(intList3);
-        System.out.println(count);
+        int[] intList18 = {1, 2, 3, 2, 4, 5, 5, 6};
+        ArrayList<Integer> modes = ArrayListAlgorithms.modes(intList18);
+        System.out.println(modes);
 
-        ArrayList<String> stringList2 = new ArrayList<String>(Arrays.asList("this", "list", "contains", "several", "words"));
-        ArrayListAlgorithms.replaceWithCaps(stringList2);
-        System.out.println(stringList2);
+        int[] intList19 = {1, 2, 2, 3, 4, 5, 5, 6, 6, 7, 6};
+        ArrayList<Integer> modes2 = ArrayListAlgorithms.modes(intList19);
+        System.out.println(modes2);
 
-        ArrayList<String> stringList12 = new ArrayList<String>(Arrays.asList("yes", "pass", "buts", "Mets", "Yankees"));
-        ArrayListAlgorithms.replaceWithCaps(stringList12);
-        System.out.println(stringList12);
+        int[] intList20 = {1, 2, 1, 2, 4, 1, 2, 4, 1, 1, 3};
+        ArrayList<Integer> modes3 = ArrayListAlgorithms.modes(intList20);
+        System.out.println(modes3);
 
-        ArrayList<String> stringList13 = new ArrayList<String>(Arrays.asList("yeah", "pat", "but", "Met", "Yankee"));
-        ArrayListAlgorithms.replaceWithCaps(stringList13);
-        System.out.println(stringList13);
+        int[] intList21 = {1, 2, 3, 4, 3, 2, 1, 4, 1, 2, 3};
+        ArrayList<Integer> modes4 = ArrayListAlgorithms.modes(intList21);
+        System.out.println(modes4);
+
+        int[] intList22 = {1, 2, 3, 4, 5, 6};
+        ArrayList<Integer> modes5 = ArrayListAlgorithms.modes(intList22);
+        System.out.println(modes5);
+
+
 
     }
 }
